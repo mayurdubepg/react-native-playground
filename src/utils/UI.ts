@@ -13,7 +13,7 @@ class UI {
       }
       case 'DASH': {
         console.log('openUrl DASH');
-        //NativeModules.ActivityStarter.navigateToExample('name');
+        NativeModules.ActivityStarter.navigateToExample('name');
         break;
       }
 

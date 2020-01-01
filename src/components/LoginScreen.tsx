@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import {
   NativeModules,
   Button,
@@ -8,12 +8,22 @@ import {
   StyleSheet,
   TextInput,
   Dimensions,
+  ActivityIndicator,
 } from 'react-native';
 import AppAction from '../redux/action/AppAction';
 import {connect} from 'react-redux';
 import UI from '../utils/UI';
+import AppState from '../redux/state/AppState';
+import {iDataState} from '../redux/state/IState';
 
-class LoginScreen extends Component {
+interface LoginScreenProps {
+  appData: AppState;
+  username: string;
+  password: string;
+  login: (username: string, password: string) => void;
+}
+
+class LoginScreen extends React.Component<LoginScreenProps> {
   static navigationOptions = {
     title: 'Login',
   };
@@ -21,9 +31,8 @@ class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: '',
-      isLoading: false,
+      username: 'mayurdube.android@gmail.com',
+      password: 'qa_gurus11',
     };
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.onUsernameChange = this.onUsernameChange.bind(this);
@@ -43,22 +52,19 @@ class LoginScreen extends Component {
   }
 
   onSignInPress() {
-    console.log(this.state);
-    console.log(this.state);
-    this.setState({isLoading: true});
-    //this.props.login(this.state.username, this.state.password);
-    UI.openURL('LIST');
+    this.props.login(this.state.username, this.state.password);
+    //UI.openURL('DASH');
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(this.props.appData);
+    if (this.props.appData.isUserLoggedIn) {
+      UI.openURL('LIST', {});
+    }
+  }
   componentDidMount() {}
 
   render() {
-    //this.props.navigation.navigate('Details')}
-    if (this.props.appData.user != null) {
-      //this.props.navigation.navigate('Home');
-      //NativeModules.ActivityStarter.navigateToExample('name');
-      // UI.openURL('LIST');
-    }
     return (
       <ScrollView
         style={styles.host}
@@ -71,7 +77,7 @@ class LoginScreen extends Component {
               placeholder="Username"
               returnKeyType="next"
               autoCapitalize="none"
-              text="mayurdube.android@gmail.com"
+              defaultValue="mayurdube.android@gmail.com"
               onChangeText={this.onUsernameChange}
             />
           </View>
@@ -80,7 +86,7 @@ class LoginScreen extends Component {
               style={styles.textinput}
               placeholder="Password"
               returnKeyType="done"
-              text="qa_gurus11"
+              defaultValue="qa_gurus11"
               secureTextEntry={true}
               autoCapitalize="none"
               onChangeText={this.onPasswordChange}
@@ -91,7 +97,10 @@ class LoginScreen extends Component {
               fill={true}
               onPress={this.onSignInPress}
               title="Sign In"
-              loading={this.state.isLoading}
+              loading={this.props.appData.state}
+            />
+            <ActivityIndicator
+              animating={this.props.appData.state == iDataState.loading}
             />
           </View>
           {/* <View style={{ height: this.state.height }} /> */}
@@ -110,7 +119,7 @@ function mapStateToProps(state: any) {
 function mapDispatchToProps(dispatch: any) {
   return {
     login: (username: string, password: string) =>
-      dispatch(AppAction.login(username, password)),
+      username && password && dispatch(AppAction.login(username, password)),
   };
 }
 

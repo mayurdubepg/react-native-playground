@@ -1,6 +1,9 @@
 import IState from './IState';
-import User from '../../model/User';
+import User from '../../model/AuthResponse';
 
-export default interface AppState extends IState {
-  user?: User;
+export default class AppState extends IState {
+  isUserLoggedIn: boolean;
+  refreshToken: string | null;
+  accessToken: string | null;
+  user: User | null;
 }

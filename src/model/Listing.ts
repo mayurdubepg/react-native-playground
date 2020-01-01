@@ -8,8 +8,8 @@ export default interface Listing {
   localizedTitle: string;
   localizedHeadline: string;
   localizedDescription: string;
-  price: Price;
-  media: Media;
+  price: Price | null;
+  media: Media | null;
 }
 
 interface Price {
@@ -17,11 +17,11 @@ interface Price {
 }
 
 interface Media {
-  cover: Cover;
+  cover: Cover | null;
 }
 
 interface Cover {
-  id: string;
-  V150: string;
-  V550: string;
+  id: string | null;
+  V150: string | null;
+  V550: string | null;
 }

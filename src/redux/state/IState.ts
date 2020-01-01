@@ -1,4 +1,4 @@
-export default interface IState {
+export default class IState {
   state?: iDataState;
   errorMessage?: String;
 }

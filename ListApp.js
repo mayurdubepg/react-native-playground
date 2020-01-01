@@ -1,3 +1,11 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
 import React from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
@@ -19,9 +27,8 @@ export default class App extends React.Component {
 }
 
 const MainNavigator = createStackNavigator({
-  Login: {screen: LoginScreen},
-  Home: {screen: HomeScreen},
   List: {screen: ListingsListScreen},
+  // Dash: {screen: NativeModules.ActivityStarter.navigateToExample('name')},
 });
 
 const AppContainer = createAppContainer(MainNavigator);

@@ -17,6 +17,10 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* pg_pocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* pg_pocTests.m */; };
 		470CCB6BA7B2EEB0963BBF14 /* libPods-pg_poc-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A30F609E9E977C30051CE4E /* libPods-pg_poc-tvOSTests.a */; };
+		77A5B95723BCE547004FF177 /* ActivityStarterModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A5B95623BCE547004FF177 /* ActivityStarterModule.m */; };
+		77A5B95A23BCE5DA004FF177 /* ExampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A5B95923BCE5DA004FF177 /* ExampleView.m */; };
+		77A5B95C23BCE610004FF177 /* ExampleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77A5B95B23BCE610004FF177 /* ExampleView.xib */; };
+		77A5B95F23BCE763004FF177 /* EventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A5B95E23BCE763004FF177 /* EventEmitter.m */; };
 		96CF3B461EB6F8F0DEB21D2B /* libPods-pg_poc-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D5FAB42D8BC370F64FDD80 /* libPods-pg_poc-tvOS.a */; };
 		AAB5EA6DA9C983CD8BC973E3 /* libPods-pg_poc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6379D39D71FB4B8C1613356E /* libPods-pg_poc.a */; };
 		DCC619935670CEAB1C83F41A /* libPods-pg_pocTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA127B35B76CD12672BAEC3 /* libPods-pg_pocTests.a */; };
@@ -64,6 +68,13 @@
 		6379D39D71FB4B8C1613356E /* libPods-pg_poc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pg_poc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A30F609E9E977C30051CE4E /* libPods-pg_poc-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pg_poc-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AA127B35B76CD12672BAEC3 /* libPods-pg_pocTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pg_pocTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77A5B95323BCE48E004FF177 /* ActivityStarterModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ActivityStarterModule.h; path = pg_poc/ActivityStarterModule.h; sourceTree = "<group>"; };
+		77A5B95623BCE547004FF177 /* ActivityStarterModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityStarterModule.m; sourceTree = "<group>"; };
+		77A5B95823BCE5AE004FF177 /* ExampleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleView.h; sourceTree = "<group>"; };
+		77A5B95923BCE5DA004FF177 /* ExampleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleView.m; sourceTree = "<group>"; };
+		77A5B95B23BCE610004FF177 /* ExampleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleView.xib; sourceTree = "<group>"; };
+		77A5B95D23BCE73A004FF177 /* EventEmitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventEmitter.h; sourceTree = "<group>"; };
+		77A5B95E23BCE763004FF177 /* EventEmitter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventEmitter.m; sourceTree = "<group>"; };
 		D1A601F5E119C59DD0CBD98B /* Pods-pg_poc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pg_poc.release.xcconfig"; path = "Target Support Files/Pods-pg_poc/Pods-pg_poc.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -132,6 +143,13 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				77A5B95323BCE48E004FF177 /* ActivityStarterModule.h */,
+				77A5B95623BCE547004FF177 /* ActivityStarterModule.m */,
+				77A5B95823BCE5AE004FF177 /* ExampleView.h */,
+				77A5B95923BCE5DA004FF177 /* ExampleView.m */,
+				77A5B95B23BCE610004FF177 /* ExampleView.xib */,
+				77A5B95D23BCE73A004FF177 /* EventEmitter.h */,
+				77A5B95E23BCE763004FF177 /* EventEmitter.m */,
 			);
 			name = pg_poc;
 			sourceTree = "<group>";
@@ -338,6 +356,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				77A5B95C23BCE610004FF177 /* ExampleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,8 +547,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A5B95723BCE547004FF177 /* ActivityStarterModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				77A5B95A23BCE5DA004FF177 /* ExampleView.m in Sources */,
+				77A5B95F23BCE763004FF177 /* EventEmitter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

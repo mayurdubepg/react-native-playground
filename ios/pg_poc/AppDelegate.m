@@ -10,8 +10,14 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import "AppDelegate.h"
+#import "ExampleView.h"
+
 
 @implementation AppDelegate
+{
+  UINavigationController *navigationController;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -28,6 +34,24 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
+}
+- (void) navigateToExampleView
+{
+  ExampleView *viewController = [[ExampleView alloc] initWithNibName:@"ExampleView" bundle:nil];
+  [navigationController pushViewController:viewController animated:YES];
+}
+
+- (void) navigateBack
+{
+  [navigationController popViewControllerAnimated:YES];
+}
+
+- (void) callJavaScript
+{
+  [self.reactBridge enqueueJSCall:@"JavaScriptVisibleToJava"
+                           method:@"alert"
+                             args:@[@"Hello, JavaScript!"]
+                       completion:nil];
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge

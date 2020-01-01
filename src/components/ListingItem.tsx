@@ -1,24 +1,23 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
-import listing from '../model/Listing';
+import Listing from '../model/Listing';
 
 interface ListingItemProps {
   listing: Listing;
-  onPress: any;
+  onPress: (Listing: Listing) => void;
 }
 
-export default class ListingItem extends Component<ListingItemProps> {
+export default class ListingItem extends React.Component<ListingItemProps> {
   constructor(props: ListingItemProps) {
     super(props);
   }
 
-  handlePress: any = () => {
-    this.props.onPress(this.props.listing.id);
+  handlePress: any = (listing: Listing) => {
+    this.props.onPress(listing);
   };
 
   render() {
     const {listing} = this.props;
-    console.log(listing.media.cover.V550);
     return (
       <TouchableOpacity style={styles.listingItem} onPress={this.handlePress}>
         <Image source={{uri: listing.media.cover.V150}} style={styles.image} />
@@ -32,19 +31,6 @@ export default class ListingItem extends Component<ListingItemProps> {
     );
   }
 }
-
-/**
- * <TouchableOpacity style={styles.deal} onPress={this.handlePress}>
-        <Image source={uri: listing.media.cover.v150} style={styles.image} />
-        <View style={styles.info}>
-          <Text style={styles.title}>{listing.localizedHeadLine}</Text>
-          <View style={styles.footer}>
-            // {deal.cause && <Text style={styles.cause}>{deal.cause.name}</Text>}
-            <Text style={styles.price}>{listing.price.}</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
- */
 
 const styles = StyleSheet.create({
   listingItem: {
