@@ -17,8 +17,9 @@
 
 RCT_EXPORT_MODULE(ActivityStarter);
 
-RCT_EXPORT_METHOD(navigateToExample)
+RCT_EXPORT_METHOD(navigateToExample:(NSString *) number)
 {
+  NSLog(@"This");
   dispatch_async(dispatch_get_main_queue(), ^{
     AppDelegate *appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
     [appDelegate navigateToExampleView];

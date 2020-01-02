@@ -13,11 +13,13 @@
 #import "AppDelegate.h"
 #import "ExampleView.h"
 
+@interface AppDelegate()
+
+@property(nonatomic, strong) UINavigationController *navigationController;
+
+@end
 
 @implementation AppDelegate
-{
-  UINavigationController *navigationController;
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -31,19 +33,22 @@
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
+  _navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+  
+  self.window.rootViewController = _navigationController;
   [self.window makeKeyAndVisible];
   return YES;
 }
 - (void) navigateToExampleView
 {
+  NSLog(@"test");
   ExampleView *viewController = [[ExampleView alloc] initWithNibName:@"ExampleView" bundle:nil];
-  [navigationController pushViewController:viewController animated:YES];
+  [_navigationController pushViewController:viewController animated:YES];
 }
 
 - (void) navigateBack
 {
-  [navigationController popViewControllerAnimated:YES];
+  [_navigationController popViewControllerAnimated:YES];
 }
 
 - (void) callJavaScript
