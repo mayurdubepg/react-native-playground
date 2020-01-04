@@ -17,7 +17,7 @@ react-native run-android
 For iOS
 
 ```
-react-native run-ios
+npm run ios-build-run
 ```
 
 # IDE
